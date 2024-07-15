@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+table {
+    width: 100%;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  mat-icon{
+    cursor: pointer;
+  }
+
+  .my-custom-snackbar {
+    margin: 0 !important;
+    padding: 20px !important;
+    position: absolute;
+    right: 25px;
+    top: 30px;
+  }

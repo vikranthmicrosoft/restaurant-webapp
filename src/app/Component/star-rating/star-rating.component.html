@@ -1,0 +1,4 @@
+<mat-icon *ngFor="let star of stars;let i =index;" (click)="addStar(i)" class="green-icon">
+    
+    {{star == 1 ? 'star' : (star == 0.5 ? 'star_half' : 'star_border')}}
+</mat-icon>

@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>{{data ? 'Edit Restaurant' : 'Add Restaurant'}}</h1>
+<div mat-dialog-content>
+  <form [formGroup] = "restaurantForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="restaurantForm.controls.name.errors && restaurantForm.controls.name.errors.required">Name field is required.</mat-error>
+      <mat-error *ngIf="restaurantForm.controls.name.errors && restaurantForm.controls.name.errors.maxlength">Name field length should be less than 50.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="emailAddress" required>
+      <mat-error *ngIf="restaurantForm.controls.emailAddress.errors && restaurantForm.controls.emailAddress.errors.required">Email field is required.</mat-error>
+      <mat-error *ngIf="restaurantForm.controls.emailAddress.errors && restaurantForm.controls.emailAddress.errors.email">Invalid email.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <textarea matInput formControlName="address" required></textarea>
+      <mat-error *ngIf="restaurantForm.controls.address.errors && restaurantForm.controls.address.required">Address field is required.</mat-error>
+      <mat-error *ngIf="restaurantForm.controls.address.errors && restaurantForm.controls.address.maxlength">Address field length should be less than 500.</mat-error>
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" required></textarea>
+      <mat-error *ngIf="restaurantForm.controls.description.errors && restaurantForm.controls.description.errors.required">Description field is required.</mat-error>
+      <mat-error *ngIf="restaurantForm.controls.description.errors && restaurantForm.controls.description.maxlength">Description field length should be less than 250.</mat-error>
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Hours</mat-label>
+      <input matInput formControlName="hours" required>
+      <mat-error *ngIf="restaurantForm.controls.hours.errors && restaurantForm.controls.hours.errors.required">Hours field is required.</mat-error>
+      <mat-error *ngIf="restaurantForm.controls.hours.errors && restaurantForm.controls.hours.errors.pattern">Hours should be in 09:00 AM - 05:00 PM this format.</mat-error>
+
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="float-end">
+  <button mat-button  (click)="cancel()">Cancel</button>
+  <button mat-button [disabled]="restaurantForm.invalid" (click)="save()">Ok</button>
+</div>
