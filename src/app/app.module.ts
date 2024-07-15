@@ -46,6 +46,6 @@ import { NotificationInterceptor } from './interceptors/notification-interceptor
     }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [DeleteConfirmationDialogComponent, AddEditRestaurantComponent] // Add this line
+  entryComponents: [DeleteConfirmationDialogComponent, AddEditRestaurantComponent]
 })
 export class AppModule { }

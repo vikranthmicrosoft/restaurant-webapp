@@ -9,8 +9,8 @@ export class RestaurantService {
 
 constructor(private http: HttpClient) { }
 
-// private apiUrl = 'http://ec2-44-206-238-126.compute-1.amazonaws.com/api/Restaurant';
-private apiUrl = 'https://localhost:7116/api/Restaurant';
+private apiUrl = 'http://ec2-44-206-238-126.compute-1.amazonaws.com/api/Restaurant';
+// private apiUrl = 'https://localhost:7116/api/Restaurant';
 
 
   getRestaurants(): Observable<any> {
